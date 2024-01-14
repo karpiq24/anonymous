@@ -1,5 +1,4 @@
 import { capitalize, getFlag, getSetting, localize, setFlag } from './module'
-import { updateActorTokens } from './token'
 
 export function playersSeeName(doc) {
     if (doc instanceof Combatant && doc.actor) doc = doc.actor
@@ -16,7 +15,6 @@ export async function toggleSeeName(doc) {
     if (canvas.tokens.hud?.rendered) canvas.tokens.hud.render()
 
     const actor = doc instanceof Actor ? doc : doc.actor
-    if (actor) updateActorTokens(actor, showName)
 
     return showName
 }

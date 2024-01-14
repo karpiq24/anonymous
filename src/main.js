@@ -4,7 +4,7 @@ import { AnonymousNamesMenu } from './apps/names'
 import { renderChatMessage } from './chat'
 import { getCurrentModule, isGM, registerSetting, registerSettingMenu } from './module'
 import { thirdPartyInitHooks, thirdPartyInitialization, thirdPartyReadyHooks } from './third'
-import { preCreateToken, renderTokenHUD } from './token'
+import { renderTokenHUD } from './token'
 import { renderCombatTracker } from './tracker'
 
 Hooks.once('init', () => {
@@ -84,5 +84,4 @@ Hooks.once('ready', () => {
 
 Hooks.on('renderCombatTracker', renderCombatTracker)
 Hooks.on('renderChatMessage', renderChatMessage)
-Hooks.on('preCreateToken', preCreateToken)
 Hooks.on('updateActor', onActorUpdate)

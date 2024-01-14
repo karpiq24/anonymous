@@ -1,6 +1,5 @@
 import { playersSeeName, refresh, toggleSeeName } from './api'
 import { MODULE_ID, localize } from './module'
-import { updateActorTokens } from './token'
 
 export function getActorDirectoryEntryContext(html, entries) {
     addSelectContextEntry({
@@ -27,7 +26,6 @@ export function onActorUpdate(actor, data) {
     let needsRefresh = getProperty(data, `flags.${MODULE_ID}.showName}`) !== undefined
 
     if ('ownership' in data) {
-        updateActorTokens(actor, actor.hasPlayerOwner)
         needsRefresh = true
     }
 
